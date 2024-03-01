@@ -14,7 +14,21 @@ classicFactory.cpp
 
 This is part that helping me to understand Mario barin is die
 
-DVD
+dvdmovie.h --- dvdmovie.cpp
+  | child
+  |
+  | ----- classic.h --- classic.cpp
+  |           | ------- classicFactory.cpp
+  | 
+  |
+  | ----- comedy.h ---- comedy.cpp
+  |           | ------- comedyFactory.cpp
+  | 
+  |
+  | ----- drama.h ----- drama.cpp
+  |           | ------- dramaFactory.cpp
+
+
 
 left Over that need to ping
 borrow.cpp
