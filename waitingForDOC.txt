@@ -15,6 +15,17 @@ dvdmovie.cpp
 
 This is part that helping me to understand Mario barin is die but houming is not
 
+How the store is working
+Manager.h ---- manager.cpp
+  |
+  |
+  |
+  |
+
+
+
+
+THe object of the DVD and how it child is files
 dvdmovie.h --- dvdmovie.cpp
   | child
   |
