@@ -13,3 +13,23 @@ classicFactory.cpp
 
 
 This is part that helping me to understand Mario barin is die
+
+DVD
+
+left Over that need to ping
+borrow.cpp
+borrowfactory.cpp
+customer.cpp
+customer.h
+hashtable.cpp
+hashtable.h
+inventory.cpp
+inventory.h
+manager.cpp
+manager.h
+moviestore.cpp
+moviestore.h
+return.cpp
+returnfactory.cpp
+transaction.cpp
+transaction.h
