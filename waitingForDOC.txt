@@ -1,6 +1,9 @@
-Over here will be all the files that is still waiting for the document
+Over here will be all the files that are still waiting for the document
 
 dramaFactory.cpp
 comedy.h
 comedy.cpp
-conmedyFactory.cpp
+comedyFactory.cpp
+classic.h
+classic.cpp
+classicFactory.cpp
