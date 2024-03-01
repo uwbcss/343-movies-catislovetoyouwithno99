@@ -12,7 +12,7 @@ classicFactory.cpp
 
 
 
-This is part that helping me to understand Mario barin is die
+This is part that helping me to understand Mario barin is die but houming is not
 
 dvdmovie.h --- dvdmovie.cpp
   | child
