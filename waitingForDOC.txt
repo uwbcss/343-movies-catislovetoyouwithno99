@@ -19,13 +19,15 @@ How the store is working
 Manager.h ---- manager.cpp
   |
   |
+  | ---------- moviestore.h ------ moviestore.cpp
+  |                 | 
+  |                 | ------------ inventory.h --------- inventory.cpp
   |
-  |
 
 
 
 
-THe object of the DVD and how it child is files
+The object of the DVD and how it child is files
 dvdmovie.h --- dvdmovie.cpp
   | child
   |
@@ -51,10 +53,6 @@ hashtable.cpp
 hashtable.h
 inventory.cpp
 inventory.h
-manager.cpp
-manager.h
-moviestore.cpp
-moviestore.h
 return.cpp
 returnfactory.cpp
 transaction.cpp
