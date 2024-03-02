@@ -1,22 +1,7 @@
-Over here will be all the files that are still waiting for the document
-
-dramaFactory.cpp
-comedy.h
-comedy.cpp
-comedyFactory.cpp
-classic.h
-classic.cpp
-classicFactory.cpp
-dvdmovie.cpp
-
-
-
-
-
 This is part that helps me to understand Mario Barin is dead but Houming is not
 
 The file name means that this is what this file will be controlled by who
-The | ---- meaning this is the file that is being controlled by the current file
+The | ---- meaning this is the file that is being controlled by the current file or it is the importation of it
 And fileA ----- fileB meaning that fileB is the importation of the fileA
 
 How the store is working
@@ -90,6 +75,19 @@ ALL files::
       comedy.cpp
       comedy.h
       comedyFactory.cpp
+      hashtable.cpp
+      hashtable.h
+      inventory.cpp
+      inventory.h
+      manager.cpp
+      manager.h
+      moviestore.cpp
+      moviestore.h
+      return.h
+      return.cpp
+      returnfactory.cpp
+      transaction.cpp
+      transaction.h
 
 
     Finish commit::
@@ -101,17 +99,3 @@ ALL files::
       dvdmovie.cpp
       dvdmovie.h
 
-
-hashtable.cpp
-hashtable.h
-inventory.cpp
-inventory.h
-manager.cpp
-manager.h
-moviestore.cpp
-moviestore.h
-return.h
-return.cpp
-returnfactory.cpp
-transaction.cpp
-transaction.h
