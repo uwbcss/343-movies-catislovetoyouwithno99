@@ -120,7 +120,12 @@ void MovieStore::processMovieData() {
       } else if (genreName == 'C') {
         processClassicDVDMovie(movieQueue.front());
       } else {
-        cerr << "Error: Genre " << genreName << " doesn't exist!" << endl;
+        // SOME Wried bug case the char will Print the NUL in some text reader
+        // which is not allowed
+        // FIXME: find out why char cna print the nul if the char is null
+        string tempGenreNameBUG = "" + genreName;
+        cerr << "Error: Genre " << tempGenreNameBUG << " doesn't exist!"
+             << endl;
       }
     } else {
       cerr << "Error: Media type " << mediaName << " doesn't exist!" << endl;

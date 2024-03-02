@@ -38,7 +38,7 @@ void testStore1() {
 void testStore2() {
   cout << "Start testStore2" << endl;
   vector<string> fileLists = {"data4customers.txt", "data4movies.txt",
-                          "data4commands.txt"};
+                              "data4commands.txt"};
   Manager *mainManager = new Manager(fileLists);
   delete mainManager;
   cout << "End testStore2" << endl;
