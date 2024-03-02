@@ -86,15 +86,18 @@ ALL files::
       classic.cpp
       classic.h
       classicFactory.cpp
+      comedy.cpp
+      comedy.h
+      comedyFactory.cpp
+
 
     Finish commit::
+      customer.cpp
+      customer.h
 
 
-comedy.cpp
-comedy.h
-comedyFactory.cpp
-customer.cpp
-customer.h
+
+
 drama.cpp
 drama.h
 dramaFactory.cpp
