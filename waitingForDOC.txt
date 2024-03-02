@@ -62,7 +62,7 @@ dvdmovie.h --- dvdmovie.cpp
 
 
 ALL files::
-  language and testing::
+  language and testing:: DO NOT NEED BE DOC DEFAULT FILES
     .clang-format
     .git
     .vscode
@@ -94,15 +94,13 @@ ALL files::
     Finish commit::
       customer.cpp
       customer.h
+      drama.cpp
+      drama.h
+      dramaFactory.cpp
+      dvdmovie.cpp
+      dvdmovie.h
 
 
-
-
-drama.cpp
-drama.h
-dramaFactory.cpp
-dvdmovie.cpp
-dvdmovie.h
 hashtable.cpp
 hashtable.h
 inventory.cpp
