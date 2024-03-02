@@ -13,7 +13,11 @@ dvdmovie.cpp
 
 
 
-This is part that helping me to understand Mario barin is die but houming is not
+This is part that helps me to understand Mario Barin is dead but Houming is not
+
+The file name means that this is what this file will be controlled by who
+The | ---- meaning this is the file that is being controlled by the current file
+And fileA ----- fileB meaning that fileB is the importation of the fileA
 
 How the store is working
 Manager.h ---- manager.cpp
@@ -22,12 +26,24 @@ Manager.h ---- manager.cpp
   | ---------- moviestore.h ------ moviestore.cpp
   |                 | 
   |                 | ------------ inventory.h --------- inventory.cpp
-  |
+  |                 |
+  |                 | ------------ hashtable.h --------- hashtable.cpp
+  |                 |                   |
+  |                 |                   | -------------- customer.h -------- customer.cpp
+  |                 |
+  |                 | ------------ transaction.h ------- transaction.cpp
+  |                 |                   |
+  |                 |                   | -------------- return.cpp
+  |                 |                   |                     |
+  |                 |                   |                     | ------------ returnfactory.cpp
+  |                 |                   |
+  |                 |                   | -------------- borrow.cpp
+  |                 |                   |                     |
+  |                 |                   |                     | ------------ borrowfactory.cpp
 
 
 
-
-The object of the DVD and how it child is files
+The object of the DVD and how it child files
 dvdmovie.h --- dvdmovie.cpp
   | child
   |
@@ -44,39 +60,41 @@ dvdmovie.h --- dvdmovie.cpp
 
 
 
-left Over that need to ping
-borrow.cpp
-borrowfactory.cpp
-customer.cpp
-customer.h
-hashtable.cpp
-hashtable.h
-inventory.cpp
-inventory.h
-return.cpp
-returnfactory.cpp
-transaction.cpp
-transaction.h
-
 
 ALL files::
-.clang-format
-.git
-.vscode
-borrow.cpp
-borrowfactory.cpp
-classic.cpp
-classic.h
-classicFactory.cpp
+  language and testing::
+    .clang-format
+    .git
+    .vscode
+    create-output.sh
+    data4commands.txt
+    data4customers.txt
+    data4movies.txt
+    main.cpp
+    output.txt
+    README.md
+    self-evaluation.md
+    store_test.cpp
+    testcommands-1.txt
+    trackdown.txt
+  
+  Source code files::
+
+    Non-finish commit ::
+      borrow.cpp
+      borrowfactory.cpp
+      classic.cpp
+      classic.h
+      classicFactory.cpp
+
+    Finish commit::
+
+
 comedy.cpp
 comedy.h
 comedyFactory.cpp
-create-output.sh
 customer.cpp
 customer.h
-data4commands.txt
-data4customers.txt
-data4movies.txt
 drama.cpp
 drama.h
 dramaFactory.cpp
@@ -86,18 +104,11 @@ hashtable.cpp
 hashtable.h
 inventory.cpp
 inventory.h
-main.cpp
 manager.cpp
 manager.h
 moviestore.cpp
 moviestore.h
-output.txt
-README.md
 return.cpp
 returnfactory.cpp
-self-evaluation.md
-store_test.cpp
-testcommands-1.txt
-trackdown.txt
 transaction.cpp
 transaction.h
