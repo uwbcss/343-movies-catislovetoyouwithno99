@@ -34,13 +34,13 @@ private:
   map<char, vector<DVDMovie *>> inventory;
 
   // comparison for comedy. returns true if mov1 is smaller
-  bool compareDF(DVDMovie *mov1, DVDMovie *mov2);
+  static bool compareDF(DVDMovie *mov1, DVDMovie *mov2);
 
   // comparison for drama. returns true if mov1 is smaller
-  bool compareDD(DVDMovie *mov1, DVDMovie *mov2);
+  static bool compareDD(DVDMovie *mov1, DVDMovie *mov2);
 
   // comparison for classic. returns true if mov1 is smaller
-  bool compareDC(DVDMovie *mov1, DVDMovie *mov2);
+  static bool compareDC(DVDMovie *mov1, DVDMovie *mov2);
 
   friend class MovieStore;
 };

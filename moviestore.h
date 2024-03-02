@@ -38,7 +38,7 @@ private:
    * helper for getting substring until an instance of char
    *
    */
-  string subStringUntilChar(string &str, int &start, char ch);
+  static string subStringUntilChar(string &str, int &start, char ch);
 
   // helper for processing drama or comedy movie
   void processDramedyDVDMovie(string &str);

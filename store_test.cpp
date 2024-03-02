@@ -5,11 +5,13 @@
  * @date 19 Jan 2019
  */
 
+#include "manager.h"
+#include <cassert>
+#include <fstream>
 #include <iostream>
 #include <map>
 #include <sstream>
-#include <fstream>
-#include <cassert>
+#include <vector>
 
 using namespace std;
 
@@ -35,6 +37,10 @@ void testStore1() {
 
 void testStore2() {
   cout << "Start testStore2" << endl;
+  vector<string> fileLists = {"data4customers.txt", "data4movies.txt",
+                          "data4commands.txt"};
+  Manager *mainManager = new Manager(fileLists);
+  delete mainManager;
   cout << "End testStore2" << endl;
 }
 
