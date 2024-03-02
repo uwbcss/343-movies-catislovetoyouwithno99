@@ -33,11 +33,11 @@ Manager.h ---- manager.cpp
   |                 |
   |                 | ------------ transaction.h ------- transaction.cpp
   |                 |                   |
-  |                 |                   | -------------- return.cpp
+  |                 |                   | -------------- return.h ---------- return.cpp
   |                 |                   |                     |
   |                 |                   |                     | ------------ returnfactory.cpp
   |                 |                   |
-  |                 |                   | -------------- borrow.cpp
+  |                 |                   | -------------- borrow.h ---------- borrow.cpp
   |                 |                   |                     |
   |                 |                   |                     | ------------ borrowfactory.cpp
 
@@ -81,6 +81,7 @@ ALL files::
   Source code files::
 
     Non-finish commit ::
+      borrow.h
       borrow.cpp
       borrowfactory.cpp
       classic.cpp
@@ -109,6 +110,7 @@ manager.cpp
 manager.h
 moviestore.cpp
 moviestore.h
+return.h
 return.cpp
 returnfactory.cpp
 transaction.cpp
