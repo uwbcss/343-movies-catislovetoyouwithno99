@@ -63,8 +63,8 @@ bool Inventory::insert(DVDMovie *mov) {
     }
     if (inventory[mov->genre][i] == mov) {
       cerr << "Error: Movie " << endl
-           << *mov << endl
-           << "already exists!" << endl;
+           << *mov
+           << "already exists!\n" << endl;
       return false;
     }
   }
