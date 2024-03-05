@@ -25,7 +25,7 @@ Customer::Customer(string customerFID, string lastName, string firstName) {
 /**
  * Delete itself when program end
  * No more else what memory leak ?
- * point off by no commit No no no not today heee
+ * point off by no commit No no no not today heee lol
  */
 Customer::~Customer() {
   for (auto &h : history) {
@@ -65,7 +65,7 @@ DVDMovie *&Customer::getMovie(char type, const string &strA,
 }
 
 /**
- * When call it will remove the curreny object fro mthe Movie list
+ * When call it will remove the current object from the Movie list
  *
  * @param type The type of Movie refer to dvdmovie class
  * @param strA Information about the movie need to borrowing refer to dvdmovie

@@ -1,6 +1,14 @@
+/**
+ *  Created By Houming Ge
+ *  Modify By Jack Landers
+ *  Date 3/4/2024
+ *
+ */
 #include "inventory.h"
 #include "classic.h"
-
+/**
+ * inventory destructor
+ */
 Inventory::~Inventory() {
   for (auto &i : inventory) {
     for (auto &v : i.second) {
@@ -8,7 +16,12 @@ Inventory::~Inventory() {
     }
   }
 }
-
+/**
+ * Comparing movies
+ *
+ * @param mov1 first movie to compare
+ * @param mov2 second movie to compare
+ */
 bool Inventory::compareDF(DVDMovie *mov1, DVDMovie *mov2) {
   if (mov1->title < mov2->title) {
     return true;
@@ -20,7 +33,12 @@ bool Inventory::compareDF(DVDMovie *mov1, DVDMovie *mov2) {
   }
   return false;
 }
-
+/**
+ * Comparing movies
+ *
+ * @param mov1 first movie to compare
+ * @param mov2 second movie to compare
+ */
 bool Inventory::compareDD(DVDMovie *mov1, DVDMovie *mov2) {
   if (mov1->director < mov2->director) {
     return true;
@@ -32,7 +50,12 @@ bool Inventory::compareDD(DVDMovie *mov1, DVDMovie *mov2) {
   }
   return false;
 }
-
+/**
+ * Comparing movies
+ *
+ * @param mov1 first movie to compare
+ * @param mov2 second movie to compare
+ */
 bool Inventory::compareDC(DVDMovie *mov1, DVDMovie *mov2) {
   if (mov1->date < mov2->date) {
     return true;
@@ -45,7 +68,11 @@ bool Inventory::compareDC(DVDMovie *mov1, DVDMovie *mov2) {
   }
   return false;
 }
-
+/**
+ * Inserting movie into inventory of the DVD store
+ *
+ * @param mov1 movie to be inserted into inventory
+ */
 bool Inventory::insert(DVDMovie *mov) {
   if (inventory.count(mov->genre) == 0) {
     vector<DVDMovie *> temp;
@@ -69,7 +96,9 @@ bool Inventory::insert(DVDMovie *mov) {
   inventory[mov->genre].insert(inventory[mov->genre].end(), mov);
   return true;
 }
-
+/**
+ *
+ */
 void Inventory::retrieve(char type, const string &strA, const string &strB,
                          DVDMovie *&mov) {
   for (int i = 0; i < inventory[type].size(); i++) {
@@ -92,7 +121,9 @@ void Inventory::retrieve(char type, const string &strA, const string &strB,
   cerr << "Error: No movie exists with variables " << type << " " << strA << " "
        << strB << "!" << endl;
 }
-
+/**
+ * Display the inventory
+ */
 void Inventory::display(char ch) {
   for (auto &j : inventory[ch]) {
     cout << *j << endl << endl;

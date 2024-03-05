@@ -1,6 +1,14 @@
+/**
+ *  Created By Houming Ge
+ *  Modify By Jack Landers
+ *  Date 3/4/2024
+ *
+ */
 #include "moviestore.h"
 #include "classic.h"
-
+/**
+ * Movie Store constructor
+ */
 MovieStore::MovieStore(const string &customersInput, const string &moviesInput,
                        const string &commandsInput) {
   string temp;
@@ -32,7 +40,9 @@ MovieStore::MovieStore(const string &customersInput, const string &moviesInput,
     cerr << "Error: Invalid filename " << commandsInput << "!" << endl;
   }
 }
-
+/**
+ * Helper Function for substring
+ */
 string MovieStore::subStringUntilChar(string &str, int &start, char ch) {
   string temp;
   for (int i = start; i < str.size(); i++) {
@@ -45,7 +55,9 @@ string MovieStore::subStringUntilChar(string &str, int &start, char ch) {
   }
   return temp;
 }
-
+/**
+ * Process the customer data
+ */
 void MovieStore::processCustomerData() {
   string idNumber;
   string lastName;
@@ -61,7 +73,9 @@ void MovieStore::processCustomerData() {
     customerQueue.pop();
   }
 }
-
+/**
+ * Process Drama and Comedy DVD movies
+ */
 void MovieStore::processDramedyDVDMovie(string &str) {
   int index = 3;
   DVDMovie *newMov = DVDMovie::create(str[0]);
@@ -78,7 +92,9 @@ void MovieStore::processDramedyDVDMovie(string &str) {
   newMov->date = str.substr(index);
   movies['D'].insert(newMov);
 }
-
+/**
+ * Process Classic DVD Movies
+ */
 void MovieStore::processClassicDVDMovie(string &str) {
   int index = 3;
   auto *newMov = dynamic_cast<Classic *>(DVDMovie::create(str[0]));
@@ -109,7 +125,9 @@ void MovieStore::processClassicDVDMovie(string &str) {
 
   movies['D'].insert(newMov);
 }
-
+/**
+ * Process all movie Data
+ */
 void MovieStore::processMovieData() {
   while (!movieQueue.empty()) {
     char mediaName = 'D'; // no other option
@@ -133,7 +151,9 @@ void MovieStore::processMovieData() {
     movieQueue.pop();
   }
 }
-
+/**
+ * Process Comedy DVD movie transaction
+ */
 void MovieStore::processComedyDVDMovieTransaction(string &str,
                                                   Customer *&customer) {
   int index = 11;
@@ -169,7 +189,9 @@ void MovieStore::processComedyDVDMovieTransaction(string &str,
          << " doesn't exist!" << endl;
   }
 }
-
+/**
+ * process drama movie transactions
+ */
 void MovieStore::processDramaDVDMovieTransaction(string &str,
                                                  Customer *&customer) {
   int index = 11;
@@ -206,7 +228,9 @@ void MovieStore::processDramaDVDMovieTransaction(string &str,
          << " doesn't exist!" << endl;
   }
 }
-
+/**
+ * process classic movie transactions
+ */
 void MovieStore::processClassicDVDMovieTransaction(string &str,
                                                    Customer *&customer) {
   int index = 11;
@@ -254,7 +278,9 @@ void MovieStore::processClassicDVDMovieTransaction(string &str,
          << " doesn't exist!" << endl;
   }
 }
-
+/**
+ * process transactions main
+ */
 void MovieStore::processTransaction(string &str) {
   char mediaN = str[7];
   char genreN = str[9];
@@ -279,7 +305,9 @@ void MovieStore::processTransaction(string &str) {
     delete cus;
   }
 }
-
+/**
+ * Main proccesssing command
+ */
 void MovieStore::processCommands() {
   while (!commandQueue.empty()) {
     char command = commandQueue.front()[0];

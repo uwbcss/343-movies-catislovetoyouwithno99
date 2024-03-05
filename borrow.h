@@ -1,15 +1,26 @@
-
+/**
+ *  Created By Houming Ge
+ *  Modify By Jack Landers
+ *  Date 3/4/2024
+ *
+ */
 #ifndef BORROW
 #define BORROW
 
 #include "transaction.h"
-
+/**
+ *  Borrow child of transaction when command comes from the file
+ */
 class Borrow : public Transaction {
 private:
-  // the constructor
+  /**
+   * Constructor for the borrow class
+   */
   explicit Borrow();
 
-  // Friend that should be connect with
+  /**
+   * Friend classes that should be able to see borrow
+   */
   friend class BorrowFactory;
   friend class MovieStore;
   friend class Inventory;
@@ -18,10 +29,14 @@ private:
 
 class BorrowFactory : public TransactionFactory {
 public:
-  // the constructor
+  /**
+   * Borrow Factory Constructor
+   */
   BorrowFactory();
 
-  // overrided create function that returns a borrow transaction
+  /**
+   * Overidded create method and return burrow transaction
+   */
   Transaction *create() const override;
 };
 

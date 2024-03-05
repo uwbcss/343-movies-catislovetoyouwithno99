@@ -1,16 +1,36 @@
+/**
+ *  Created By Houming Ge
+ *  Modify By Jack Landers
+ *  Date 3/4/2024
+ *
+ */
 #ifndef CLASSIC
 #define CLASSIC
 #include "dvdmovie.h"
-
+/**
+ *
+ */
 class Classic : public DVDMovie {
 public:
-  // returns true if this is higher than mov
+  /**
+   * returns true if this is higher than other mov object
+   *
+   * @param mov other movie object being compared
+   */
   bool operator>(const Classic *&mov) const;
 
-  // returns true if this is equal to mov
+  /**
+   * returns true is this is equal to mov
+   *
+   * @param mov other movie object being compared
+   */
   bool operator==(const Classic *&mov) const;
 
-  // for cout, but it works with overloading
+  /**
+   * helper for cout
+   * works with overloading
+   * @param out output stream shows what's displayed
+   */
   ostream &print(std::ostream &out) const override;
 
 private:
@@ -20,7 +40,9 @@ private:
   // the month of release
   int month;
 
-  // the constructor
+  /**
+   * the constructor
+   */
   explicit Classic();
 
   // for corresponding factory to access it
@@ -35,10 +57,14 @@ private:
 
 class ClassicFactory : public DVDMovieFactory {
 public:
-  // the constructor
+  /**
+   * the constructor for the classic factory
+   */
   ClassicFactory();
 
-  // overrided create function that returns a classic movie
+  /**
+   * overrided create function that returns a classic movie
+   */
   DVDMovie *create() const override;
 };
 

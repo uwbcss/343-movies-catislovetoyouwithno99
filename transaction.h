@@ -1,4 +1,9 @@
-
+/**
+ *  Created By Houming Ge
+ *  Modify By Jack Landers
+ *  Date 3/4/2024
+ *
+ */
 #ifndef TRANSACTION
 #define TRANSACTION
 
@@ -8,26 +13,40 @@
 class TransactionFactory;
 
 class Transaction {
-  // for cout
+  /**
+   * for cout
+   */
   friend ostream &operator<<(ostream &out, const Transaction &tra);
 
-  // also for cout, but it works with overloading
+  /**
+   * also for cout, but it works with overloading
+   */
   virtual ostream &print(std::ostream &out) const;
 
 public:
-  // virtual destructor for virtual class
+  /**
+   * virtual destructor for virtual class
+   */
   virtual ~Transaction() = default;
 
-  // type of transaction
+  /**
+   * type of transaction
+   */
   char transactionType;
 
-  // media being transacted
+  /**
+   * media being transacted
+   */
   DVDMovie *movie;
 
-  // remembers the different types of factories
+  /**
+   * remembers the different types of factories
+   */
   static void rememberType(const char &type, TransactionFactory *factory);
 
-  // creates a Transaction
+  /**
+   * creates a Transaction
+   */
   static Transaction *create(const char &type);
 
 private:
@@ -41,7 +60,9 @@ private:
 
 class TransactionFactory {
 public:
-  // virtual to build the Transaction
+  /**
+   * virtual to build the Transaction
+   */
   virtual Transaction *create() const = 0;
 };
 

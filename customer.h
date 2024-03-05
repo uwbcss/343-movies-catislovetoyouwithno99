@@ -55,7 +55,7 @@ private:
   /**
    * Customer method to handole the input that is taken as the customer object
    * from command line
-   * 
+   *
    * @param customerFID Unique for each customer ID
    * @param lastName customer lastName
    * @param firstName customer firstName
