@@ -35,7 +35,7 @@ MovieStore::MovieStore(const string &customersInput, const string &moviesInput,
     while (getline(inputT, temp)) {
       commandQueue.push(temp);
     }
-    processCommands();
+    procCommand();
   } else {
     cerr << "Error: Invalid filename " << commandsInput << "!" << endl;
   }
@@ -154,8 +154,7 @@ void MovieStore::processMovieData() {
 /**
  * Process Comedy DVD movie transaction
  */
-void MovieStore::processComedyDVDMovieTransaction(string &str,
-                                                  Customer *&customer) {
+void MovieStore::processFDVDTran(string &str, Customer *&customer) {
   int index = 11;
   Transaction *transact = Transaction::create(str[0]);
   string titleN = subStringUntilChar(str, index, ',');
@@ -192,8 +191,7 @@ void MovieStore::processComedyDVDMovieTransaction(string &str,
 /**
  * process drama movie transactions
  */
-void MovieStore::processDramaDVDMovieTransaction(string &str,
-                                                 Customer *&customer) {
+void MovieStore::processDDVDTran(string &str, Customer *&customer) {
   int index = 11;
   Transaction *transact = Transaction::create(str[0]);
   string directorN = subStringUntilChar(str, index, ',');
@@ -231,8 +229,7 @@ void MovieStore::processDramaDVDMovieTransaction(string &str,
 /**
  * process classic movie transactions
  */
-void MovieStore::processClassicDVDMovieTransaction(string &str,
-                                                   Customer *&customer) {
+void MovieStore::processCDVDTran(string &str, Customer *&customer) {
   int index = 11;
   Transaction *transact = Transaction::create(str[0]);
   string date = subStringUntilChar(str, index, ' ');
@@ -281,7 +278,7 @@ void MovieStore::processClassicDVDMovieTransaction(string &str,
 /**
  * process transactions main
  */
-void MovieStore::processTransaction(string &str) {
+void MovieStore::processTran(string &str) {
   char mediaN = str[7];
   char genreN = str[9];
   Customer *cus = nullptr;
@@ -290,11 +287,11 @@ void MovieStore::processTransaction(string &str) {
   if (cus != nullptr) {
     if (mediaN == 'D') {
       if (genreN == 'F') {
-        processComedyDVDMovieTransaction(str, cus);
+        processFDVDTran(str, cus);
       } else if (genreN == 'D') {
-        processDramaDVDMovieTransaction(str, cus);
+        processDDVDTran(str, cus);
       } else if (genreN == 'C') {
-        processClassicDVDMovieTransaction(str, cus);
+        processCDVDTran(str, cus);
       } else {
         cerr << "Error: Genre " << genreN << " doesn't exist!" << endl;
       }
@@ -308,11 +305,11 @@ void MovieStore::processTransaction(string &str) {
 /**
  * Main proccesssing command
  */
-void MovieStore::processCommands() {
+void MovieStore::procCommand() {
   while (!commandQueue.empty()) {
     char command = commandQueue.front()[0];
     if (command == 'B' || command == 'R') {
-      processTransaction(commandQueue.front());
+      processTran(commandQueue.front());
     } else if (command == 'I') {
       cout << "Printing inventory!" << endl;
       movies['D'].display('F');

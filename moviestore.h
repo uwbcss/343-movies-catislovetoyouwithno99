@@ -29,7 +29,7 @@ public:
    * processes the customer data, returns true if successful
    * otherwise, returns false
    */
-  void processCommands();
+  void procCommand();
 
   /**
    * constructor
@@ -72,20 +72,20 @@ private:
   /**
    * helper for processing a transaction involving a comedy movie
    */
-  void processComedyDVDMovieTransaction(string &str, Customer *&customer);
+  void processFDVDTran(string &str, Customer *&customer);
 
   /**
    * helper for processing a transaction involving a drama movie
    */
-  void processDramaDVDMovieTransaction(string &str, Customer *&customer);
+  void processDDVDTran(string &str, Customer *&customer);
 
   /**
    * helper for processing a transaction involving a classic movie
    */
-  void processClassicDVDMovieTransaction(string &str, Customer *&customer);
+  void processCDVDTran(string &str, Customer *&customer);
 
   /**
    * helper for processing transactions
    */
-  void processTransaction(string &str);
+  void processTran(string &str);
 };

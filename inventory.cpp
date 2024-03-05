@@ -96,8 +96,9 @@ bool Inventory::insert(DVDMovie *mov) {
   inventory[mov->genre].insert(inventory[mov->genre].end(), mov);
   return true;
 }
+
 /**
- *
+ *  obtains the DVDMovie from the inventory
  */
 void Inventory::retrieve(char type, const string &strA, const string &strB,
                          DVDMovie *&mov) {
@@ -121,6 +122,7 @@ void Inventory::retrieve(char type, const string &strA, const string &strB,
   cerr << "Error: No movie exists with variables " << type << " " << strA << " "
        << strB << "!" << endl;
 }
+
 /**
  * Display the inventory
  */
